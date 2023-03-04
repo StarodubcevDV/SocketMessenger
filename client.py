@@ -33,7 +33,7 @@ class User:
             message_dict = {'name': self.__name, 'message': message}
             user_encode_message = json.dumps(message_dict).encode('utf-8')
             try:
-                self._current_room.send(user_encode_message)
+                self._current_room.sendall(user_encode_message)
             except:
                 print("Sorry, cant send the message.")
                 continue
